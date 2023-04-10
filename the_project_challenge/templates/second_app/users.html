@@ -1,0 +1,40 @@
+<!doctype html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h1>Hello from users page</h1>
+    {% if access_users %}
+
+        <ol>
+            {% for user in access_users %}
+            <li>User Info</li>
+                <ul>
+                    <li>First Name: {{user.first_name}}</li>
+                    <li>Last Name: {{user.last_name}}</li>
+                    <li>Email: {{user.email}}</li>
+                </ul>
+            {% endfor%}
+        </ol>
+
+    {% else %}
+    <p>NO USERS FOUND!</p>
+    {% endif %}
+    <br>
+    <a href="{% url 'second_app:home' %}">Back to home page</a>
+</body>
+
+</html>
+
+
+

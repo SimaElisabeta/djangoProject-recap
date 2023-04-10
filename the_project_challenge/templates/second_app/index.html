@@ -14,8 +14,11 @@
 
 <body>
     <h1>This is home page!</h1>
-    <a href="{% url 'second_app:second_app' %}">Go to second_app page</a>
+    <h2>Check other pages of this app:</h2>
+
+    <a href="{% url 'second_app:second_app' %}">Go to -> second_app page</a> <br>
+    <a href="{% url 'second_app:users' %}">Go to -> users page</a>
+
+
 </body>
 </html>
-
-
