@@ -1,0 +1,62 @@
+<!doctype html>
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+
+    <h1>WELCOME TO RELATIVE URL TEMPLATES</h1>
+    <a href="{% url 'basic_app:other' %}">The other page</a><br>
+    <a href="{% url 'basic_app:index' %}">The index page</a>
+
+<div class="container-fluid row">
+    <!-- Col left-->
+  <div class="col-lg-7" style="text-align:center">
+    <!-- Tab panes img-->
+    <div class="tab-content">
+      <div id="target1-img" class="container tab-pane{% if active_section == '1' %} active {% endif %}"><br>
+        <img alt="earth" src="https://i.pinimg.com/originals/15/4f/8f/154f8f3dd81a4cd2da2c82162173cd07.png" title="earth" style="width:40%">
+      </div>
+      <div id="target2-img" class="container tab-pane fade{% if active_section == '2' %} active show {% endif %}"><br>
+        <img alt="earth-internal" src="https://images.theconversation.com/files/283241/original/file-20190709-44437-lazrcy.png?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip" title="earth-internal" style="width:50%">
+      </div>
+      <div id="target3-img" class="container tab-pane fade{% if active_section == '3' %} active show {% endif %}"><br>
+        <img alt="earth-internal-geology" src="https://cdn-icons-png.flaticon.com/512/950/950139.png" title="earth-internal-geology" style="width:40%">
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Col right-->
+  <div class="col-lg-5">
+    <!-- Tab panes text-->
+    <div class="tab-content">
+      <div id="target1" class="container tab-pane{% if active_section == '1' %} active {% endif %}"><br>
+        <h3>01 Menu</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div id="target2" class="container tab-pane fade{% if active_section == '2' %} active show {% endif %}"><br>
+        <h3>02 Menu</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div id="target3" class="container tab-pane fade{% if active_section == '3' %} active show {% endif %}"><br>
+        <h3>03 Menu</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      </div>
+    </div>
+
+    <!-- Nav pills -->
+    <ul class="nav nav-pills flex-column col-4" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link {% if active_section == '1' %} active {% endif %}" href="{% url 'basic_app:relative' look_name=active_tab look_section=1 %}">01</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if active_section == '2' %} active {% endif %}" href="{% url 'basic_app:relative' look_name=active_tab look_section=2 %}">02</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if active_section == '3' %} active {% endif %}" href="{% url 'basic_app:relative' look_name=active_tab look_section=3 %}">03</a>
+        </li>
+    </ul>
+  </div>
+
+</div>
+
+
+{% endblock %}
